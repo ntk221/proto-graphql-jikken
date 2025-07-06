@@ -1,0 +1,35 @@
+{
+  "name": "bff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --import tsx/esm src/server.ts",
+    "start:old": "node index.js",
+    "start:new": "node --import tsx/esm src/server-new.ts",
+    "build": "buf generate",
+    "generate-schema": "node --import tsx/esm scripts/generate-schema.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.7.1",
+    "@grpc/grpc-js": "^1.8.14",
+    "@grpc/proto-loader": "^0.7.7",
+    "@pothos/core": "^4.7.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "graphql": "^16.6.0",
+    "graphql-scalars": "^1.24.2",
+    "graphql-yoga": "^5.13.5"
+  },
+  "devDependencies": {
+    "protoc-gen-pothos": "^0.6.2",
+    "ts-proto": "^2.7.5",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}

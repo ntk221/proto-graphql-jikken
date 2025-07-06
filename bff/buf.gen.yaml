@@ -1,0 +1,16 @@
+version: v1
+plugins:
+  - name: ts
+    out: src/__generated__/proto
+    strategy: all
+    path: node_modules/.bin/protoc-gen-ts_proto
+    opt:
+      - esModuleInterop=true
+      - unrecognizedEnum=false
+      - outputTypeRegistry=true
+  - name: pothos
+    path: node_modules/.bin/protoc-gen-pothos
+    out: src/__generated__/pothos
+    opt:
+      - pothos_builder_path=../../builder
+      - import_prefix=../proto
